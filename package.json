@@ -1,0 +1,30 @@
+{
+  "name": "lunarcrush-mcp-server",
+  "version": "1.0.0",
+  "description": "stdio interface for the lunarcrush.ai remote mcp server",
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "stdio",
+    "javascript"
+  ],
+  "homepage": "https://github.com/lunarcrush/mcp-server#readme",
+  "bugs": {
+    "url": "https://github.com/lunarcrush/mcp-server/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lunarcrush/mcp-server.git"
+  },
+  "license": "ISC",
+  "author": "LunarCrush",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.13.0",
+    "zod": "^3.25.67"
+  }
+}
