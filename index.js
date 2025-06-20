@@ -54,7 +54,7 @@ const transport = new StdioServerTransport();
 await server.connect(transport);
 await client.connect(clientTransport);
 await proxyServer({ client, server });
-console.log(
-  "LunarCrush MCP Proxy Server is running... with client key",
-  process.env.LUNARCRUSH_API_KEY
-);
+// console.log(
+//   "LunarCrush MCP Proxy Server is running... with client key",
+//   process.env.LUNARCRUSH_API_KEY
+// );
