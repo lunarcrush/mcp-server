@@ -1,0 +1,4 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+runtime: "typescript"  # or "container"
+env:
+  LUNARCRUSH_API_KEY: "your_lunarcrush_api_key"

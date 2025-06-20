@@ -3,6 +3,7 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js";
 import { proxyServer } from "./proxy.js";
+import { z } from "zod";
 
 const args = process.argv;
 if (Array.isArray(args)) {
@@ -49,11 +50,22 @@ const server = new Server(
   }
 );
 
+export const configSchema = z.object({
+  apiKey: z.string().describe("LunarCrush API key"),
+});
+
 // Start receiving messages on stdin and sending messages on stdout
 const transport = new StdioServerTransport();
-await server.connect(transport);
-await client.connect(clientTransport);
-await proxyServer({ client, server });
+
+async function main() {
+  await server.connect(transport);
+  await client.connect(clientTransport);
+  await proxyServer({ client, server });
+}
+main().catch((error) => {
+  console.error("Error starting MCP proxy server:", error);
+  process.exit(1);
+});
 // console.log(
 //   "LunarCrush MCP Proxy Server is running... with client key",
 //   process.env.LUNARCRUSH_API_KEY

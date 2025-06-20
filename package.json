@@ -19,6 +19,7 @@
   "license": "ISC",
   "author": "LunarCrush",
   "type": "module",
+  "module": "./index.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
