@@ -23,7 +23,7 @@ if (Array.isArray(args)) {
 
 const clientTransport = new StreamableHTTPClientTransport(
   new URL(
-    `http://localhost:8787/mcp?key=${process.env.LUNARCRUSH_API_KEY || ""}`
+    `https://lunarcrush.ai/mcp?key=${process.env.LUNARCRUSH_API_KEY || ""}`
   )
 );
 
